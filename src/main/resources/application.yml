@@ -1,0 +1,5 @@
+app:
+  server_ip: localhost
+  server_port: 8091
+  server_bucket: real_bucket_here
+  server_password: real_password_here

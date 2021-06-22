@@ -1,0 +1,5 @@
+app:
+  server_ip: localhost
+  server_port: 8091
+  server_bucket: testBucket
+  server_password: testPassword
