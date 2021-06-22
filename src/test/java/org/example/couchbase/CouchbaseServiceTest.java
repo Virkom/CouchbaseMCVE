@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
@@ -19,6 +20,8 @@ class CouchbaseServiceTest {
 
     @Test
     void test() {
-        assertTrue(couchbaseService.test());
+        String value = "test-value";
+        Object o = couchbaseService.get("init-test", String.class);
+        assertEquals(value, o);
     }
 }

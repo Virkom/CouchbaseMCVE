@@ -1,5 +1,6 @@
 package org.example.couchbase;
 
+import java.io.Serializable;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.inject.Inject;
@@ -32,7 +33,11 @@ public class CouchbaseService {
         couchbaseClient.closeCacheClient();
     }
 
-    boolean test() {
-        return couchbaseClient.test();
+    void set(String key, Serializable o, int ttlSeconds) {
+        couchbaseClient.set(key, o, ttlSeconds);
+    }
+
+    public <T> T get(String key, Class<T> cls) {
+        return couchbaseClient.get(key, cls);
     }
 }

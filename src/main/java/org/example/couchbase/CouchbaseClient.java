@@ -64,24 +64,4 @@ public class CouchbaseClient {
             return null;
         }
     }
-
-    public boolean test() {
-        try {
-            String value = "test-value";
-            set("init-test", value, 10);
-            Object o = get("init-test", String.class);
-            if (o == null) {
-                log.error("Failed to get the init object");
-                return false;
-            }
-            if (!value.equals(o)) {
-                log.error("The init object test failed");
-                return false;
-            }
-        } catch (Exception e) {
-            log.error("Got exception while check the init object", e);
-            return false;
-        }
-        return true;
-    }
 }
